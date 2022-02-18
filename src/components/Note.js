@@ -1,3 +1,5 @@
+// Note layout for user created jhournal entries.
+
 const Note = (props) => {
     return(
         <div className='note'>
