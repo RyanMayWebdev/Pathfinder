@@ -1,12 +1,26 @@
 import AddSpellForm from "./AddSpellForm"
 import SpellCard from "./SpellCard"
-import { useState } from "react"
+import {useState} from "react"
 
 const Spellbook = (props) => {
-    const [spellToShow,setSpellToShow] = useState('0')
+
+    const [spellToShow,
+        setSpellToShow] = useState('0')
+
+    // Separate state and function to control spell card reveal as using the same
+    // state for both the add spell form and the spell card would cause them to show
+    // at the same time which is unwanted.
+    const [displayCard,
+        setDisplayCard] = useState(false)
+    const cardClass = displayCard
+        ? ''
+        : 'hidden'
+    const toggleCard = (e) => {
+        setDisplayCard(!displayCard)
+    }
 
     return (
-        <div>
+        <div className="spellBook">
             <h2>Spellbook</h2>
             <div>
                 <table>
@@ -21,26 +35,41 @@ const Spellbook = (props) => {
                         </tr>
                     </thead>
                     <tbody>
-                    {props.spells ? 
-                        props.spells.map((spell, index) => {
-                            return (
-                                <tr key={index}>
-                                    <td>{spell.name}</td>
-                                    <td>{spell.type}</td>
-                                    <td>{spell.cast}</td>
-                                    <td>{spell.range}</td>
-                                    <td>{spell.targets}</td>
-                                    <td><button id={index} onClick={(e)=> setSpellToShow(e.target.id)}>Show Details</button></td>
-                                </tr>
-                            )
-                        }) :
-                        null }
+                        {props.spells
+                            ? props
+                                .spells
+                                .map((spell, index) => {
+                                    return (
+                                        <tr key={index}>
+                                            <td>{spell.name}</td>
+                                            <td>{spell.type}</td>
+                                            <td>{spell.cast}</td>
+                                            <td>{spell.range}</td>
+                                            <td>{spell.targets}</td>
+                                            <td>
+                                                <button
+                                                    id={index}
+                                                    onClick={(e) => {
+                                                    toggleCard(e)
+                                                    setSpellToShow(e.target.id)
+                                                }}>Show Details</button>
+                                            </td>
+                                        </tr>
+                                    )
+                                })
+                            : null}
                     </tbody>
                 </table>
             </div>
-            <button onClick={props.toggleDisplay}>Add Spell</button> 
-            <AddSpellForm class={props.shouldDisplay} addSpell={props.addSpell} toggleDisplay={props.toggleDisplay} />
-            <SpellCard currentSpell={props.spells[spellToShow]} />
+            <button onClick={props.toggleDisplay}>Add Spell</button>
+            <AddSpellForm
+                class={props.shouldDisplay}
+                addSpell={props.addSpell}
+                toggleDisplay={props.toggleDisplay}/>
+            <SpellCard
+                currentSpell={props.spells[spellToShow]}
+                displayClass={cardClass}
+                toggleCard={toggleCard}/>
         </div>
     )
 }

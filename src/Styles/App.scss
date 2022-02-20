@@ -1,0 +1,13 @@
+@use '_Setup.scss';
+// Spellbook/spellcard specific styles
+@use '_Spellbook.scss';
+
+// General Styles
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+

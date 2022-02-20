@@ -5,10 +5,16 @@ const Nav = (props) => {
     return (
         <nav>
             <ul>
-            {/* Used buttons instead of links as I want the application to be single page and not scroll/jump to sections */}
-                <li><button onClick={(e)=> handleClick(e)}>Character</button></li>
-                <li><button onClick={(e)=> handleClick(e)}>Journal</button></li>
-                <li><button onClick={(e)=> handleClick(e)}>Spellbook</button></li>
+                {/* Used buttons instead of links as I want the application to be single page and not scroll/jump to sections */}
+                <li>
+                    <button onClick={(e) => handleClick(e)}>Character</button>
+                </li>
+                <li>
+                    <button onClick={(e) => handleClick(e)}>Journal</button>
+                </li>
+                <li>
+                    <button onClick={(e) => handleClick(e)}>Spellbook</button>
+                </li>
             </ul>
         </nav>
     )
