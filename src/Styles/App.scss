@@ -1,6 +1,7 @@
 @use '_Setup.scss';
 // Spellbook/spellcard specific styles
 @use '_Spellbook.scss';
+@use '_Nav.scss';
 
 // General Styles
 .hidden {
@@ -11,3 +12,36 @@
     display: block;
 }
 
+p {
+    display: inline-block;
+    margin: 1rem;
+}
+
+.App {
+    background-image: url(../../public/magicBook.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    overflow-y:hidden;
+}
+
+.overlay {
+    background-color: rgba(255, 255, 255, 0.39);
+    width: 80%;
+    margin: 1rem auto;
+    padding: 2rem 0;
+    box-shadow: 0.5rem 0.5rem 1rem #000;
+    height: 85%;
+    overflow-y:scroll;
+    scrollbar-color: rgb(0, 0, 0) rgba(255, 255, 255, 0);
+    scrollbar-width: thin;
+    // height: 100vh;
+}
+.overlay::-webkit-scrollbar{
+    background: rgba(0, 0, 0, 0);
+    width: 5px;
+}
+.overlay::-webkit-scrollbar-thumb{
+    background: rgb(0, 0, 0);
+}

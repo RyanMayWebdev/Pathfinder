@@ -6,7 +6,7 @@ const Journal = (props) => {
     const notes = props.notes
 
     return (
-        <div className="background journal">
+        <div className="overlay">
             {notes.length > 0
                 ? notes.map(note => {
                     return <Note title ={note.title} body={note.body}/>

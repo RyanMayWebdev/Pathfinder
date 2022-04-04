@@ -20,7 +20,7 @@ const Spellbook = (props) => {
     }
 
     return (
-        <div className="spellBook">
+        <div className="spellBook overlay">
             <h2>Spellbook</h2>
             <div>
                 <table>
@@ -61,7 +61,7 @@ const Spellbook = (props) => {
                     </tbody>
                 </table>
             </div>
-            <button onClick={props.toggleDisplay}>Add Spell</button>
+            <button className="addSpellBtn" onClick={props.toggleDisplay}>Add Spell</button>
             <AddSpellForm
                 class={props.shouldDisplay}
                 addSpell={props.addSpell}

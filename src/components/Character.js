@@ -11,25 +11,49 @@ const Character = () => {
             AC: 20,
             Touch: 17,
             'Flat-Foot': 16
+        }, {
+            Fort: 3,
+            Ref: 6,
+            Will: 4
+        }, {
+            'Melee Att': 7,
+            Ranged: 4,
+            CMB: 8,
+            CMD: 14
+        }, {
+            Hitpoints: 35
         }
     ]
-    // Maps through the array of objects containing the characters stats in order to display them all on screen without having to hard code as certain values can change.
-    // Map through each object and then map it's key/value pair into paragraphs within the dom.
+    // Maps through the array of objects containing the characters stats in order to
+    // display them all on screen without having to hard code as certain values can
+    // change. Map through each object and then map it's key/value pair into
+    // paragraphs within the dom.
     return (
-        <div>
+        <div className="overlay">
             <h2>Character</h2>
             {/* Mapping through the array of objects */}
-            {characterStats.map(stat => { 
-                {/* Map through each individual object */}
-                return (Object.entries(stat).map((key, value) => {
-                    {/* Map through the key value pairs and return them as a paragraph within one div containing the pair */}
+            <div className="charStats">
+                {characterStats.map(stat => {
+                    {/* Map through each individual object */
+                    }
                     return (
-                        <div key={value}>
-                            {key.map(property => <p>{property}</p>)}
+                        <div className="statBlock">
+                            {Object
+                                .entries(stat)
+                                .map((key, value) => {
+                                    {/* Map through the key value pairs and return them as a paragraph within one div containing the pair */
+                                    }
+                                    return (
+                                        <div key={value}>
+                                            {key.map(property => <p>{property}</p>)}
+                                        </div>
+                                    )
+                                })
+                            }
                         </div>
                     )
-                }))
-            })}
+                })}
+            </div>
         </div>
 
     )

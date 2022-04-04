@@ -1,0 +1,21 @@
+nav {
+    background-color: rgb(0, 0, 0);
+    ul {
+        display: flex;
+        justify-content: space-around;
+        list-style-type: none;
+        margin: 0;
+        padding: 1rem;
+
+        li button {
+            border: none;
+            background-color: rgba(0, 0, 0, 0);
+            color: #fff;
+
+            &:hover,&:focus {
+                color: rgb(252, 196, 112);
+            }
+        }
+    }
+
+}

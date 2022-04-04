@@ -1,8 +1,21 @@
 
-td {
-    border: 1px solid black;
-    border-style: solid;
-    padding: 1.5rem;
+table {
+    margin: 2rem auto;
+    td {
+        border: 1px solid black;
+        border-style: solid;
+        padding: 1.5rem;
+    }
+}
+
+
+h2 {
+    margin: 0;
+    text-align: center;
+}
+
+.addSpellBtn {
+    margin-left: calc(50% - 48.5px);
 }
 
 
@@ -12,6 +25,7 @@ td {
     display: flex;
     height: 100vh;
     justify-content: center;
+    left: 0;
     position: absolute;
     top: 0;
     width: 100vw;
@@ -30,8 +44,4 @@ td {
     max-width: 320px;
     padding: 1rem 1.5rem;
     width: 25vw;
-
-    h2 {
-        text-align: center;
-    }
 }
