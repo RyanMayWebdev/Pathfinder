@@ -9,11 +9,11 @@ nav {
 
         li button {
             border: none;
-            background-color: rgba(0, 0, 0, 0);
+            background-color: #00000000;
             color: #fff;
 
             &:hover,&:focus {
-                color: rgb(252, 196, 112);
+                color: #fcc470;
             }
         }
     }

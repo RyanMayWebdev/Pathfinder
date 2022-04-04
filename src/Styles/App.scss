@@ -2,19 +2,41 @@
 // Spellbook/spellcard specific styles
 @use '_Spellbook.scss';
 @use '_Nav.scss';
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Metamorphous&display=swap');
 
 // General Styles
 .hidden {
     display: none;
 }
 
-.visible {
-    display: block;
-}
 
+html {
+    font-size: 125%;
+}
+body{
+    font-family: 'Metamorphous', cursive;
+}
 p {
     display: inline-block;
     margin: 1rem;
+}
+
+h1, h2, li {
+    font-family: 'Cinzel Decorative', cursive;
+    font-weight: 400;
+}
+
+.mainTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    h1{
+        font-family: 'Cinzel Decorative', cursive;
+        font-size: 7rem;
+        font-weight: 400;
+        margin: 0;
+    }
 }
 
 .App {
@@ -27,7 +49,8 @@ p {
 }
 
 .overlay {
-    background-color: rgba(255, 255, 255, 0.39);
+    background-color: rgba(0, 0, 0, 0.651);
+    color: #fff;
     width: 80%;
     margin: 1rem auto;
     padding: 2rem 0;

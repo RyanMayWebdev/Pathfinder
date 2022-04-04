@@ -17,7 +17,8 @@ function App() {
         setNote(newNotes)
     }
 
-    // Changes the current page to be displayed because I don't want to use react-router
+    // Changes the current page to be displayed because I don't want to use
+    // react-router
     const [currentPage,
         setCurrentPage] = useState('');
     const changePage = (page) => {
@@ -33,7 +34,7 @@ function App() {
     }
 
     const shouldDisplay = display
-        ? 'visible'
+        ? ''
         : 'hidden'
 
     // create/load spells from user input and store to database
@@ -55,8 +56,7 @@ function App() {
 
     return (
         <main className="App">
-            <Nav handleClick={changePage}/> 
-            {currentPage === 'Journal'
+            <Nav handleClick={changePage}/> {currentPage === 'Journal'
                 ? <Journal
                         notes={note}
                         handleNote={handleNewNote}
@@ -70,7 +70,9 @@ function App() {
                                 shouldDisplay={shouldDisplay}
                                 addSpell={addSpells}
                                 spells={spells}/>
-                        : <h1>Adventure awaits ...</h1>}
+                        : <div className='mainTitle'>
+                            <h1>Adventure awaits ...</h1>
+                        </div>}
         </main>
     );
 }

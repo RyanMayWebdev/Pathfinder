@@ -3,7 +3,7 @@ const SpellCard = (props) => {
     const currentSpell = props.currentSpell
     return (
         <div className={`blurBackground ${props.displayClass}`}>
-            <div className="spellCard">
+            <div className="cardOverlay">
                 <button 
                     className="close" 
                     id="close" name="close" 

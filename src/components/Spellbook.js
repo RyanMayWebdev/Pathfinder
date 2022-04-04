@@ -65,7 +65,8 @@ const Spellbook = (props) => {
             <AddSpellForm
                 class={props.shouldDisplay}
                 addSpell={props.addSpell}
-                toggleDisplay={props.toggleDisplay}/>
+                toggleDisplay={props.toggleDisplay}
+                />
             <SpellCard
                 currentSpell={props.spells[spellToShow]}
                 displayClass={cardClass}
